@@ -20,7 +20,7 @@ export default function Detail() {
         navigation.goBack()
     }
 
-        funcition sendMail() {
+        function sendMail() {
             MailComposer.composeAsync({
                 subject: `Herói do caso: ${incident.title}`,
                 recipients: [incident.email],
@@ -54,6 +54,7 @@ export default function Detail() {
                             {Intl.NumberFormat('pt-BR', { 
                                 style: 'currency', currency: 'BRL' }).format(incident.value)}
                                 </Text>
+            </View>
 
             <View style={styles.contactBox}>
                 <Text style={styles.heroTitle}>Salve o dia!</Text>
@@ -71,6 +72,6 @@ export default function Detail() {
                     </TouchableOpacity>
                 </View>
             </View>
-
+        </View>
     );
 }
