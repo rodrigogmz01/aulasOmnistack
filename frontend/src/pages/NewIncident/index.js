@@ -12,7 +12,7 @@ import logoImg from '../../assets/logo.png'
 export default function NewIncident() {
 const [title, setTitle] = useState('');
 const [description, setDescription] = useState('');
-const [value, setValue] = useState('');
+const [values, setValues] = useState('');
 
 const history = useHistory();
 
@@ -24,13 +24,13 @@ async function handleNewIncident(e) {
     const data = {
         title,
         description,
-        value,
+        values,
     };
 
 try {
     await api.post('incidents', data, {
         headers: {
-            Autorization: ongId,
+            Authorization: ongId,
         }
     })
 
@@ -46,7 +46,7 @@ try {
                 <section>
                     <img src={logoImg} alt="RBB Consultoria"/>
                     <h1>Cadastrar novo caso</h1>
-                    <p>Descreva o caso detalhadamente para encontrarmos a solucao!</p>
+                    <p>Descreva o caso detalhadamente para encontrarmos a solução!</p>
                     
                     <Link className="back-link" to="/Profile">
                     <FiArrowLeft size={16} color="#B8860B" />
@@ -69,8 +69,8 @@ try {
             
                 <input 
                 placeholder="Valor em Reais" 
-                value={value}
-                onChange={e =>setValue(e.target.value)}
+                value={values}
+                onChange={e =>setValues(e.target.value)}
                 />
 
                             
